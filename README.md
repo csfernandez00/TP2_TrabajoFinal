@@ -40,7 +40,7 @@ npm run start
 
 ## Guia de endpoints
 
-### createUser
+## createUser
 
 Registrar un nuevo usuario en la base de datos
 
@@ -79,7 +79,7 @@ POST /users
 }
 ```
 
-### login
+## login
 
 Endpoint para inciar sesion 
 
@@ -105,7 +105,7 @@ Envia el token como una cookie y devuelve el siguiente objeto
 }
 ```
 
-### updateUser
+## updateUser
 Actualiza un usuario existente, accesible por admin para editar cualquier usuario, o accesible por usuario para editar sus propios datos unicamente.
 
 **Request:**
@@ -139,7 +139,7 @@ PUT /users/:id
 }
 ```
 
-### getUserByID
+## getUserByID
 Obitiene los datos de un usuario por su ID, accesible para admin y para usuario coincidente con el ID ingresado.
 
 **Request:**
@@ -162,7 +162,7 @@ GET /users/:id
   }
 }
 ```
-### getAllUsers
+## getAllUsers
 Devuelve lista de todos los usuario de la base de datos, solo accesible para rol "ADMIN".
 
 **Request:**
@@ -196,7 +196,7 @@ GET /users
 }
 ```
 
-### deleteUser
+## deleteUser
 Elimina un usuario por su ID.
 
 **Request:**
