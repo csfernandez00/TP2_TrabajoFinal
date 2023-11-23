@@ -1,17 +1,18 @@
 import express from "express";
-import dotenv from "dotenv";
 import connection from "./Connection/connection.js";
-import { User, Product } from "./Models/index.js";
+import { User, Product, Role } from "./Models/index.js";
 import router from "./Routes/router.js";
+import { MESSAGE, PORT } from "./Config/config.js";
+import cookieParser from "cookie-parser";
 
 const app = express();
-
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
 app.use("/api", router);
 
-dotenv.config();
-
 await connection.sync({ force: false }).then(() => {
-	app.listen(process.env.PORT, async () => {
-		console.log(`${process.env.MESSAGE} ${process.env.PORT}`);
+	app.listen(PORT, async () => {
+		console.log(`${MESSAGE} ${PORT}`);
 	});
 });

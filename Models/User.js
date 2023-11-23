@@ -3,9 +3,11 @@ import bcrypt from "bcrypt";
 import connection from "../Connection/connection.js";
 
 class User extends Model {
-	// Encripto la password cruda para compararla con la que ya tengo encriptada en mi base
-	validatePassword = async (rawPassword) => {
+	isValidPassword = async (rawPassword) => {
+		// Encripto la password cruda para compararla con la que ya tengo encriptada en mi base
+
 		const validate = await bcrypt.compare(rawPassword, this.password);
+
 		return validate;
 	};
 }
@@ -56,7 +58,7 @@ User.init(
 			type: dt.STRING,
 			allowNull: false,
 			validate: {
-				isEmail: {
+				notEmpty: {
 					msg: "Se debe ingresar un pais",
 				},
 			},
@@ -68,7 +70,7 @@ User.init(
 			type: dt.STRING,
 			allowNull: false,
 			validate: {
-				isEmail: {
+				notEmpty: {
 					msg: "Se debe establecer una contraseña",
 				},
 			},
