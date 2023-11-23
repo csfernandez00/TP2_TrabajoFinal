@@ -38,7 +38,180 @@ B- En caso de querer levantar el proyecto para produccion o demostracion:
 npm run start
 ```
 
+## Guia de endpoints
 
+### createUser
+
+Registrar un nuevo usuario en la base de datos
+
+**Request:**
+```
+POST /users
+```
+
+**Body:**
+```
+{
+  "nombre": "Your Name",
+  "apellido": "Your Last Name",
+  "mail": "your@email.com",
+  "empresa": "Your Company",
+  "pais": "Your Country",
+  "password": "yourPassword",
+  "id_rol": 1 // Replace with the desired role ID
+}
+```
+
+**Response:**
+```
+{
+  "success": true,
+  "message": "El usuario ha sido creado exitosamente!",
+  "data": {
+    "id_usuario": 1, // User ID
+    "nombre": "Your Name",
+    "apellido": "Your Last Name",
+    "mail": "your@email.com",
+    "empresa": "Your Company",
+    "pais": "Your Country",
+    "id_rol": 1 // Role ID
+  }
+}
+```
+
+### login
+
+Endpoint para inciar sesion 
+
+**Request:**
+```
+POST /users/login
+```
+
+**Body:**
+```
+{
+  "mail": "your@email.com",
+  "password": "yourPassword"
+}
+```
+
+**Response:**
+```
+Envia el token como una cookie y devuelve el siguiente objeto
+{
+  "success": true,
+  "message": "Login completo exitosamente!",
+}
+```
+
+### updateUser
+Actualiza un usuario existente, accesible por admin para editar cualquier usuario, o accesible por usuario para editar sus propios datos unicamente.
+
+**Request:**
+```
+PUT /users/:id
+```
+**Body:**
+```
+{
+  "nombre": "Updated Name",
+  "apellido": "Updated Last Name",
+  "mail": "updated@email.com",
+  "password": "updatedPassword"
+}
+```
+
+**Response:**
+```
+{
+  "success": true,
+  "message": "Usuario modificado exitosamente!",
+  "data": {
+    "id_usuario": 1, // User ID
+    "nombre": "Updated Name",
+    "apellido": "Updated Last Name",
+    "mail": "updated@email.com",
+    "empresa": "Your Company", // Company remains unchanged
+    "pais": "Your Country", // Country remains unchanged
+    "id_rol": 1 // Role ID remains unchanged
+  }
+}
+```
+
+### getUserByID
+Obitiene los datos de un usuario por su ID, accesible para admin y para usuario coincidente con el ID ingresado.
+
+**Request:**
+```
+GET /users/:id
+```
+**Response:**
+
+```
+{
+  "success": true,
+  "data": {
+    "id_usuario": 1, // User ID
+    "nombre": "Your Name",
+    "apellido": "Your Last Name",
+    "mail": "your@email.com",
+    "empresa": "Your Company",
+    "pais": "Your Country",
+    "role": "YourRoleName" // User's role name
+  }
+}
+```
+### getAllUsers
+Devuelve lista de todos los usuario de la base de datos, solo accesible para rol "ADMIN".
+
+**Request:**
+```
+GET /users
+```
+**Response:**
+```
+{
+  "success": true,
+  "data": [
+    {
+      "id_usuario": 1, // User ID
+      "nombre": "User 1 Name",
+      "apellido": "User 1 Last Name",
+      "mail": "user1@email.com",
+      "empresa": "User 1 Company",
+      "pais": "User 1 Country",
+      "role": "User 1 RoleName" // User's role name
+    },
+    {
+      "id_usuario": 2, // User ID
+      "nombre": "User 2 Name",
+      "apellido": "User 2 Last Name",
+      "mail": "user2@email.com",
+      "empresa": "User 2 Company",
+      "pais": "User 2 Country",
+      "role": "User 2 RoleName" // User's role name
+    }
+  ]
+}
+```
+
+### deleteUser
+Elimina un usuario por su ID.
+
+**Request:**
+```
+DELETE /users/:id
+```
+
+**Response:**
+```
+JSON
+{
+  "success": true,
+  "message": "Usuario eliminado exitosamente!"
+}
+```
 
 
 
