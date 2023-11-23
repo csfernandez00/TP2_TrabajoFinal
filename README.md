@@ -57,7 +57,7 @@ POST /user
   "empresa": "Your Company",
   "pais": "Your Country",
   "password": "yourPassword",
-  "id_rol": 1 // Replace with the desired role ID
+  "id_rol": 1 
 }
 ```
 
@@ -67,13 +67,13 @@ POST /user
   "success": true,
   "message": "El usuario ha sido creado exitosamente!",
   "data": {
-    "id_usuario": 1, // User ID
+    "id_usuario": 1, 
     "nombre": "Your Name",
     "apellido": "Your Last Name",
     "mail": "your@email.com",
     "empresa": "Your Company",
     "pais": "Your Country",
-    "id_rol": 1 // Role ID
+    "id_rol": 1 
   }
 }
 ```
@@ -127,13 +127,13 @@ Le pasamos cualquiera de los siguientes datos, solo los que vamos a modificar:
   "success": true,
   "message": "Usuario modificado exitosamente!",
   "data": {
-    "id_usuario": 1, // User ID
+    "id_usuario": 1, 
     "nombre": "Updated Name",
     "apellido": "Updated Last Name",
     "mail": "updated@email.com",
-    "empresa": "Your Company", // Company remains unchanged
-    "pais": "Your Country", // Country remains unchanged
-    "id_rol": 1 // Role ID remains unchanged
+    "empresa": "Your Company", 
+    "pais": "Your Country", 
+    "id_rol": 1 
   }
 }
 ```
@@ -151,13 +151,13 @@ GET /user/:id
 {
   "success": true,
   "data": {
-    "id_usuario": 1, // User ID
+    "id_usuario": 1, 
     "nombre": "Your Name",
     "apellido": "Your Last Name",
     "mail": "your@email.com",
     "empresa": "Your Company",
     "pais": "Your Country",
-    "role": "YourRoleName" // User's role name
+    "role": "YourRoleName" 
   }
 }
 ```
@@ -174,22 +174,22 @@ GET /user
   "success": true,
   "data": [
     {
-      "id_usuario": 1, // User ID
+      "id_usuario": 1, 
       "nombre": "User 1 Name",
       "apellido": "User 1 Last Name",
       "mail": "user1@email.com",
       "empresa": "User 1 Company",
       "pais": "User 1 Country",
-      "role": "User 1 RoleName" // User's role name
+      "role": "User 1 RoleName" 
     },
     {
-      "id_usuario": 2, // User ID
+      "id_usuario": 2, 
       "nombre": "User 2 Name",
       "apellido": "User 2 Last Name",
       "mail": "user2@email.com",
       "empresa": "User 2 Company",
       "pais": "User 2 Country",
-      "role": "User 2 RoleName" // User's role name
+      "role": "User 2 RoleName" 
     }
   ]
 }
@@ -249,11 +249,11 @@ GET /role
   "success": true,
   "data": [
     {
-      "id_rol": 1, // Role ID
+      "id_rol": 1, 
       "nombre": "Role 1 Name"
     },
     {
-      "id_rol": 2, // Role ID
+      "id_rol": 2, 
       "nombre": "Role 2 Name"
     }
   ]
@@ -273,8 +273,8 @@ GET /role/:id
 {
   "success": true,
   "data": {
-    "id_rol": 1, // Role ID
-    "nombre": "Your Role Name"
+    "id_rol": 1,
+    "nombre": "Role Name"
   }
 }
 ```
@@ -290,7 +290,7 @@ PUT /role/:id
 **Body:**
 ```
 {
-  "nombre": "Updated Role Name"
+  "nombre": "Role Name"
 }
 ```
 **Response:**
