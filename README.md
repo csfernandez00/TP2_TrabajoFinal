@@ -45,7 +45,7 @@ Registrar un nuevo usuario en la base de datos
 
 **Request:**
 ```
-POST /users
+POST /user
 ```
 
 **Body:**
@@ -83,7 +83,7 @@ Endpoint para inciar sesion
 
 **Request:**
 ```
-POST /users/login
+POST /user/login
 ```
 
 **Body:**
@@ -108,7 +108,7 @@ Actualiza un usuario existente, accesible por admin para editar cualquier usuari
 
 **Request:**
 ```
-PUT /users/:id
+PUT /user/:id
 ```
 **Body:**
 Le pasamos cualquiera de los siguientes datos, solo los que vamos a modificar:
@@ -143,7 +143,7 @@ Obitiene los datos de un usuario por su ID, accesible para admin y para usuario 
 
 **Request:**
 ```
-GET /users/:id
+GET /user/:id
 ```
 **Response:**
 
@@ -166,7 +166,7 @@ Devuelve lista de todos los usuario de la base de datos, solo accesible para rol
 
 **Request:**
 ```
-GET /users
+GET /user
 ```
 **Response:**
 ```
@@ -200,7 +200,7 @@ Elimina un usuario por su ID.
 
 **Request:**
 ```
-DELETE /users/:id
+DELETE /user/:id
 ```
 
 **Response:**
@@ -219,7 +219,7 @@ Crear nuevo role.
 
 **Request:**
 ```
-POST /roles
+POST /role
 ```
 **Body:**
 ```
@@ -241,7 +241,7 @@ Obtener todos los roles registrados.
 
 **Request:**
 ```
-GET /roles
+GET /role
 ```
 **Response:**
 ```
@@ -265,7 +265,7 @@ Obtener role por su ID.
 
 **Request:**
 ```
-GET /roles/:id
+GET /role/:id
 ```
 
 **Response:**
@@ -280,11 +280,11 @@ GET /roles/:id
 ```
 ## updateRole
 
-Actualizar role existente.
+Actualizar rol existente.
 
 Request:
 ```
-PUT /roles/:id
+PUT /role/:id
 ```
 
 **Body:**
@@ -306,7 +306,7 @@ Eliminar role a traves de su ID.
 
 **Request:**
 ```
-DELETE /roles/:id
+DELETE /role/:id
 ```
 **Response:**
 
@@ -317,8 +317,200 @@ DELETE /roles/:id
 }
 ```
 
+# Guia de endpoints: Products
+
+## getAllProducts
+
+Obtener todos los productos registrados en la base de datos.
+
+**Request:**
+```
+GET /product
+```
+
+**Response**
+```
+{
+  "success": true,
+  "data": [
+    {
+      "id_producto": 1,
+      "nombre": "Producto 1",
+      "marca": "Marca 1",
+      "modelo": "Modelo 1",
+      "cantidad": 10,
+      "codigo_Interno": "1234567890",
+      "id_usuario": 1,
+      "usuario": {
+        "nombre": "Juan Pérez",
+        "apellido": "García"
+      }
+    },
+    {
+      "id_producto": 2,
+      "nombre": "Producto 2",
+      "marca": "Marca 2",
+      "modelo": "Modelo 2",
+      "cantidad": 20,
+      "codigo_Interno": "9876543210",
+      "id_usuario": 2,
+      "usuario": {
+        "nombre": "María López",
+        "apellido": "González"
+      }
+    }
+  ]
+}
+```
+
+## getAllProductsOfAUser
+
+Obtener todos los productos pertenecientes a un usuario.
+
+**Request**
+```
+GET /product/owner/:userid
+```
+
+**Response**
+```
+{
+  "success": true,
+  "data": [
+    {
+      "id_producto": 1,
+      "nombre": "Producto 1",
+      "marca": "Marca 1",
+      "modelo": "Modelo 1",
+      "cantidad": 10,
+      "codigo_Interno": "1234567890",
+      "id_usuario": 1,
+      "usuario": {
+        "nombre": "Juan Pérez",
+        "apellido": "García"
+      }
+    },
+    {
+      "id_producto": 2,
+      "nombre": "Producto 2",
+      "marca": "Marca 2",
+      "modelo": "Modelo 2",
+      "cantidad": 20,
+      "codigo_Interno": "9876543210",
+      "id_usuario": 2,
+      "usuario": {
+        "nombre": "María López",
+        "apellido": "González"
+      }
+    }
+  ]
+}
+```
+
+## createProduct
+
+Crear producto
+
+**Request**
+```
+POST /product
+```
+
+**Body**
+```
+{
+  "nombre": "Producto nuevo",
+  "marca": "Marca nueva",
+  "modelo": "Modelo nuevo",
+  "cantidad": 10,
+  "codigo_Interno": "opcional",
+  "id_usuario": 1
+}
+
+```
+
+**Response**
+```
+{
+  "success": true,
+  "message": "El producto
+```
 
 
+## getProductByID
 
+Obtener producto con el ID ingresado
+
+**Request**
+```
+GET /product/:id
+```
+
+**Response**
+```
+{
+  "success": true,
+  "data": {
+    "id_producto": 1,
+    "nombre": "Producto 1",
+    "marca": "Marca 1",
+    "modelo": "Modelo 1",
+    "cantidad": 10,
+    "codigo_Interno": "1234567890",
+    "id_usuario": 1,
+    "usuario": {
+      "nombre": "Juan Pérez",
+      "apellido": "García"
+    }
+  }
+}
+```
+
+## updateProduct
+
+Actualiza un producto a traves de su ID y con los valores enviados.
+
+**Request**
+```
+PUT /product/:id
+```
+
+**Body**
+```
+se debe enviar cualquiera de los siguientes campos, solo los que se van a modificar:
+{
+  "nombre": "Producto nuevo",
+  "marca": "Marca nueva",
+  "modelo": "Modelo nuevo",
+  "cantidad": 10,
+  "codigo_Interno": "opcional",
+  "id_usuario": 1
+}
+```
+
+**Response**
+```
+{
+  "success": true,
+  "message": "Producto modificado exitosamente!"
+}
+```
+
+## deleteProduct
+
+Elimina un producto a traves de su ID
+
+**Request**
+```
+DELETE /product/:id
+```
+
+**Response**
+```
+{
+  "success": true,
+  "message": "Producto eliminado exitosamente!"
+}
+```
 
 
