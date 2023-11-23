@@ -21,7 +21,7 @@ Una vez alli deberemos cambiar el "false" por la palabra "true", dado que es la 
 Nos quedara de la siguiente manera:
 ```
 await connection.sync({ force: true }).then(() => {
-      ...............
+                               ....
 ```
 
 
