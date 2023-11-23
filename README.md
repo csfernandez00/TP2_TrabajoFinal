@@ -38,7 +38,7 @@ B- En caso de querer levantar el proyecto para produccion o demostracion:
 npm run start
 ```
 
-## Guia de endpoints
+# Guia de endpoints
 
 ## createUser
 
@@ -212,6 +212,8 @@ JSON
   "message": "Usuario eliminado exitosamente!"
 }
 ```
+
+
 
 
 
