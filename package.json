@@ -6,7 +6,7 @@
 	"type": "module",
 	"scripts": {
 		"start": "node .",
-		"dev": "node --watch .",
+		"dev": "node --watch app.js",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"author": "",
