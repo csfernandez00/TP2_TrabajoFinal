@@ -38,10 +38,9 @@ B- En caso de querer levantar el proyecto para produccion o demostracion:
 npm run start
 ```
 
-# Guia de endpoints
+# Guia de endpoints: Users
 
 ## createUser
-
 Registrar un nuevo usuario en la base de datos
 
 **Request:**
@@ -80,7 +79,6 @@ POST /users
 ```
 
 ## login
-
 Endpoint para inciar sesion 
 
 **Request:**
@@ -113,6 +111,7 @@ Actualiza un usuario existente, accesible por admin para editar cualquier usuari
 PUT /users/:id
 ```
 **Body:**
+Le pasamos cualquiera de los siguientes datos, solo los que vamos a modificar:
 ```
 {
   "nombre": "Updated Name",
@@ -206,12 +205,118 @@ DELETE /users/:id
 
 **Response:**
 ```
-JSON
 {
   "success": true,
   "message": "Usuario eliminado exitosamente!"
 }
 ```
+
+
+# Guia de endpoints: Roles
+## createRole
+
+Crear nuevo role.
+
+**Request:**
+```
+POST /roles
+```
+**Body:**
+```
+{
+  "nombre": "RoleName"
+}
+```
+**Response:**
+```
+{
+  "success": true,
+  "message": "Se ha creado el rol exitosamente!"
+}
+```
+
+## getAllRoles
+
+Obtener todos los roles registrados.
+
+**Request:**
+```
+GET /roles
+```
+**Response:**
+```
+{
+  "success": true,
+  "data": [
+    {
+      "id_rol": 1, // Role ID
+      "nombre": "Role 1 Name"
+    },
+    {
+      "id_rol": 2, // Role ID
+      "nombre": "Role 2 Name"
+    }
+  ]
+}
+```
+## getRoleByID
+
+Obtener role por su ID.
+
+**Request:**
+```
+GET /roles/:id
+```
+
+**Response:**
+```
+{
+  "success": true,
+  "data": {
+    "id_rol": 1, // Role ID
+    "nombre": "Your Role Name"
+  }
+}
+```
+## updateRole
+
+Actualizar role existente.
+
+Request:
+```
+PUT /roles/:id
+```
+
+**Body:**
+```
+{
+  "nombre": "Updated Role Name"
+}
+```
+**Response:**
+```
+{
+  "success": true,
+  "message": "Rol modificado exitosamente!"
+}
+```
+## deleteRole
+
+Eliminar role a traves de su ID.
+
+**Request:**
+```
+DELETE /roles/:id
+```
+**Response:**
+
+```
+{
+  "success": true,
+  "message": "Rol eliminado exitosamente!"
+}
+```
+
 
 
 
