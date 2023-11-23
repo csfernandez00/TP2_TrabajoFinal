@@ -16,6 +16,14 @@ Luego de esto, debemos abrir el archivo **"app.js"** y buscaremos la linea de co
 await connection.sync({ force: false }).then(() => {
       ...............
 ```
-Una vez alli deberemos cambiar el "false" por la palabra "true", dado que es la primera vez que levantamos el proyecto y esto permite la correcta inicializacion de nuestras tablas en la base de datos.
+Una vez alli deberemos cambiar el "false" por la palabra "true", dado que es la primera vez que levantamos el proyecto y esto permite la correcta inicializacion de nuestras tablas en la base de datos. 
+
+Nos quedara de la siguiente manera:
+```
+await connection.sync({ force: true }).then(() => {
+      ...............
+```
+
+
 
 
