@@ -5,7 +5,6 @@ class RolesController {
 
 	createRole = async (req, res) => {
 		try {
-			console.log(req.body);
 			const { nombre } = req.body;
 			const newRole = Role.create({ nombre });
 			if (!newRole) throw new Error("Error al crear el rol");
