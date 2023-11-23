@@ -11,11 +11,11 @@ Luego de haber completado el paso anterior, debemos comenzar con las preparacion
 
 Comenzaremos por crear un archivo llamado **".env"** y copiaremos en el todo el contenido del archivo **".envExample"**, una vez copiado, reemplazaremos sus valores, con los que vamos a utilizar para levantar el proyecto en nuestra computadora.
 
-Luego de esto, debemos abrir el archivo **app.js** y buscaremos la linea de codigo en la que veamos **connection.sync**.
+Luego de esto, debemos abrir el archivo **"app.js"** y buscaremos la linea de codigo en la que veamos **"connection.sync"**.
 ```
-
 await connection.sync({ force: false }).then(() => {
       ...............
 ```
+Una vez alli deberemos cambiar el "false" por la palabra "true", dado que es la primera vez que levantamos el proyecto y esto permite la correcta inicializacion de nuestras tablas en la base de datos.
 
 
