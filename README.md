@@ -13,9 +13,9 @@ Comenzaremos por crear un archivo llamado **".env"** y copiaremos en el todo el 
 
 Luego de esto, debemos abrir el archivo **app.js** y buscaremos la linea de codigo en la que veamos **connection.sync**.
 ```
-...
+
 await connection.sync({ force: false }).then(() => {
-...
+      ...............
 ```
 
 
