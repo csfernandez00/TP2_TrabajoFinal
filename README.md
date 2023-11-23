@@ -24,6 +24,20 @@ await connection.sync({ force: true }).then(() => {
                                ....
 ```
 
+### 3- Levantar el proyecto
+Con los pasos anteriores completos, ya estamos listos para levantar el proyecto, para esto abriremos la consola y ejecutaremos uno de los siguientes comandos:
+
+En caso de querer levantar el proyecto para seguir desarrollandolo:
+```
+npm run dev
+```
+
+En caso de querer levantar el proyecto para produccion o demostracion:
+```
+npm run start
+```
+
+
 
 
 
