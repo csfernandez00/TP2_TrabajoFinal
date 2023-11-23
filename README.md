@@ -5,6 +5,8 @@ En primer lugar una vez clonado el proyecto en nuestra pc, lo abriremos en un ed
 ```
 npm install
 ```
+
+
 ### 2- Configuracion previa
 Luego de haber completado el paso anterior, debemos comenzar con las preparaciones para lograr una limpia ejecucion sin errores.
 
@@ -24,6 +26,8 @@ await connection.sync({ force: true }).then(() => {
 ```
 > [!WARNING]
 > Una vez levantado el proyecto por primera vez, volver a colocar el valor en "false", de lo contrario inicializaremos las tablas cada vez que levantamos el proyecto.
+
+
 
 ### 3- Levantar el proyecto
 Con los pasos anteriores completos, ya estamos listos para levantar el proyecto, para esto abriremos la consola y ejecutaremos uno de los siguientes comandos:
