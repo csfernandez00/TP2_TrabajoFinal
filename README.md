@@ -23,20 +23,21 @@ Nos quedara de la siguiente manera:
 await connection.sync({ force: true }).then(() => {
                                ....
 ```
+> [!WARNING]
+> Una vez levantado el proyecto por primera vez, volver a colocar el valor en "false", de lo contrario inicializaremos las tablas cada vez que levantemos el proyecto.
 
 ### 3- Levantar el proyecto
 Con los pasos anteriores completos, ya estamos listos para levantar el proyecto, para esto abriremos la consola y ejecutaremos uno de los siguientes comandos:
 
-En caso de querer levantar el proyecto para seguir desarrollandolo:
+A- En caso de querer levantar el proyecto para seguir desarrollandolo:
 ```
 npm run dev
 ```
 
-En caso de querer levantar el proyecto para produccion o demostracion:
+B- En caso de querer levantar el proyecto para produccion o demostracion:
 ```
 npm run start
 ```
-
 
 
 
