@@ -48,8 +48,6 @@ class UsersController {
 				role: user.Role.dataValues.nombre,
 			};
 
-			console.log(dataForToken);
-
 			res.cookie("token", createToken(dataForToken)).status(200).send({
 				success: true,
 				message: "Login completo exitosamente!",

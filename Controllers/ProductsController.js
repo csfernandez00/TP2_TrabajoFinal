@@ -69,8 +69,6 @@ class ProductsController {
 				id_usuario,
 			});
 
-			console.log(newProduct);
-
 			if (!newProduct) throw new Error("Error al crear el nuevo producto");
 
 			res.status(200).send({
